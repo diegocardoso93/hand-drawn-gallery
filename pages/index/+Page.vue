@@ -24,6 +24,32 @@ function goToImage(id) {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 10px;
+}
+.list {
+  width: 100%;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+@media (max-width: 1024px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
 .card {
   border: 1px solid #000;
   color: white;
@@ -59,23 +85,5 @@ function goToImage(id) {
   overflow: hidden;
   line-height: 20px;
   text-overflow: ellipsis;
-}
-.container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  padding-top: 10px;
-}
-.list {
-  width: 100%;
-  max-width: 1024px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
 }
 </style>

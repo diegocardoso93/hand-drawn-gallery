@@ -26,7 +26,6 @@ a {
   text-decoration: none;
 }
 .content {
-  padding-top: 100px;
-  margin-bottom: 100px;
+  padding: 100px 20px;
 }
 </style>

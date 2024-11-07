@@ -19,6 +19,7 @@
   border-bottom: 3px solid #000;
   position: fixed;
   background: white;
+  padding: 0 20px;
 }
 .header {
   display: flex;

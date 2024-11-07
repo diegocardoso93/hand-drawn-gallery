@@ -7,7 +7,7 @@
     </div>
     <div class="title small">
       <h3>owner "nullifier_hash":</h3>
-      <div> {{ data.user.nullifier_hash }}</div>
+      <div>{{ data.user.nullifier_hash }}</div>
     </div>
   </div>
 </template>
@@ -21,12 +21,21 @@ console.log(data);
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1024px;
+  margin: 30px auto;
+}
 .title {
   display: flex;
   font-family: 'Poppins', sans-serif;
   justify-content: center;
   align-items: flex-end;
   margin-top: 20px;
+  padding: 0 20px;
 }
 .title h3 {
   margin: 0 6px;
@@ -37,13 +46,14 @@ console.log(data);
 .title.small {
   font-size: 12px;
   color: #999;
+  width: 100%;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1024px;
-  margin: 30px auto;
+.title.small div {
+  word-wrap: break-word;
+  width: calc(100% - 160px);
+}
+img {
+  max-width: 100%;
+  padding: 0 20px;
 }
 </style>
