@@ -1,7 +1,8 @@
 import { UniversalHandler } from "@universal-middleware/core";
+import { KVNamespace } from "@cloudflare/workers-types/experimental";
 import { renderPage } from "vike/server";
 
-export const vikeHandler = (async (request, context, runtime): Promise<Response> => {
+export const vikeHandler = (async (request, context, runtime: any): Promise<Response> => {
   console.log('vikehandler');
   const DB = runtime.env.DB;
 
@@ -25,17 +26,16 @@ export const vikeHandler = (async (request, context, runtime): Promise<Response>
   });
 }) satisfies UniversalHandler;
 
-async function getListPageData(request, DB) {
+async function getListPageData(request: Request, DB: KVNamespace) {
   console.log('listHandler');
-  console.log(request.url);
-  let pageData = {};
+  let pageData: any = {};
   const parts = request.url.split('/');
   const endPart = parts[parts.length-1];
   if (!endPart || endPart === 'index.pageContext.json') {
-    const last = await DB.get('_LAST');
-    pageData = { items: [] };
+    const last = +(await DB.get('_LAST') || 0);
+    pageData.items = [];
     for (let x = last; x>0; x--) {
-      pageData.items.push(JSON.parse(await DB.get(x)));
+      pageData.items.push(JSON.parse(await DB.get(`${x}`) || '{}'));
     }
   }
   return pageData;
