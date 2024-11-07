@@ -4,7 +4,7 @@
       <a href="/"><h1>Hand Drawn Gallery</h1></a>
       <a href="/create" title="new image">
         <span>+</span>
-        <img src="../assets/page-add.svg" />
+        <img src="../assets/image-add.svg" />
       </a>
     </header>
   </div>
