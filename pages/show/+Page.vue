@@ -36,6 +36,8 @@ console.log(data);
   align-items: flex-end;
   margin-top: 20px;
   padding: 0 20px;
+  width: 100%;
+  max-width: 600px;
 }
 .title h3 {
   margin: 0 6px;
@@ -47,6 +49,7 @@ console.log(data);
   font-size: 12px;
   color: #999;
   width: 100%;
+  max-width: 600px;
 }
 .title.small div {
   word-wrap: break-word;
