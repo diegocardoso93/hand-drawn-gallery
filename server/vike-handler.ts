@@ -28,7 +28,7 @@ export const vikeHandler = (async (request, context, runtime: any): Promise<Resp
 
 async function getListPageData(request: Request, DB: KVNamespace) {
   console.log('listHandler');
-  let pageData: any = {};
+  const pageData: any = {};
   const parts = request.url.split('/');
   const endPart = parts[parts.length-1];
   if (!endPart || endPart === 'index.pageContext.json') {
